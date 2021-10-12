@@ -37,7 +37,7 @@ app.use(errorController.get404);
 
 mongoose
   .connect(
-    `mongodb+srv://admin:${process.env.MONGO_PASS}@cse341.w7n3c.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
+    `${process.env.MONGO_URL}`
   )
   .then(result => {
     User.findOne().then(user => {
